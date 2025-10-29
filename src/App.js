@@ -15,7 +15,8 @@ function App() {
     setLoading(true);
 
     try {
-      const response = await fetch("https://studyai-backend-5wig.onrender.com", {
+      const response = await fetch(`${process.env.REACT_APP_API_URL || "https://studyai-backend-5wig.onrender.com"}/ask`, {
+
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ question }),
